@@ -7,7 +7,7 @@
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title" @click="insertTitlu">
           {{movie.title}}
         </h5>
         <p class="card-text">{{movie.year || "n/a"}}</p>
@@ -18,14 +18,22 @@
 </template>
 
 <script>
-import MovieDetailesVue from '../views/MovieDetailes.vue';
 export default {
+    
     props: ['movie'],
     data:() =>({
         imgNotFoundSrc : "https://cdn.browshot.com/static/images/not-found.png"
     }),
+    
     created(){
       // console.log(this.movie.id.replace('/title/', '').replace('/', ''))
+      // console.log(`Injected property: ${this.titlu}`)
+    },
+    methods:{
+      insertTitlu(){
+        console.log('cat')
+
+      }
     }
 };
 
