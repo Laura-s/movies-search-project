@@ -1,4 +1,5 @@
 <template>
+
   <div v-if="movie" class="container mt-4">
     <div class="row">
       <div class="col bg-light p-2">
@@ -28,13 +29,16 @@
       </div>
     </div>
   </div>
+  <Loader v-show="isLoading" />
 </template>
 
 <script>
+import Loader from "../components/loader.vue";
 export default {
   data: () => ({
     movie: null,
     isFavourite: false,
+    isLoading: true,
   }),
   created() {
     this.getMovieDetailes();
@@ -42,6 +46,7 @@ export default {
   },
   methods: {
     getMovieDetailes() {
+      this.isLoading = true
       fetch(
         "https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=" +
           this.$route.params.id,
@@ -56,10 +61,12 @@ export default {
       )
         .then((response) => response.json())
         .then((response) => {
+          this.isLoading = false
           this.movie = response;
           this.checkFavs();
         })
         .catch((err) => {
+          this.isLoading = false
           console.error(err);
         });
     },
@@ -78,9 +85,12 @@ export default {
     },
     checkFavs() {
       const favs = JSON.parse(localStorage.getItem("favourites"));
-      this.isFavourite = favs.includes(this.movie.id);
+      this.isFavourite = favs && favs.includes(this.movie.id);
     },
   },
+  components:{
+     Loader,
+  }
 };
 </script>
 

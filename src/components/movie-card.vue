@@ -7,7 +7,7 @@
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title" @click="insertTitlu">
+        <h5 class="card-title">
           {{movie.title}}
         </h5>
         <p class="card-text">{{movie.year || "n/a"}}</p>
@@ -30,10 +30,10 @@ export default {
       // console.log(`Injected property: ${this.titlu}`)
     },
     methods:{
-      insertTitlu(){
-        console.log('cat')
-
-      }
+      // trimitetitlu(){
+      //   this.$emit("trimitetitlu", this.movie.title);
+      //     console.log('message emit from child component')
+      // }
     }
 };
 
