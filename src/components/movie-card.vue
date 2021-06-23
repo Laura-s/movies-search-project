@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3 pb-4">
+  <div class="col-lg-2 col-md-3 col-sm-4  pb-4">
     <div class="card">
       <img
         :src="movie.image && movie.image.url ? movie.image.url : imgNotFoundSrc"
