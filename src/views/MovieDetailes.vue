@@ -2,14 +2,14 @@
 
   <div v-if="movie" class="container mt-4">
     <div class="row">
-      <div class="col bg-light p-2">
+      <div class="col-sm-12 col-md-6 bg-light p-md-2">
         <p @click="removeFavourite" class="text-end heart" v-if="isFavourite">
           🧡
         </p>
         <p @click="addFavourite" v-else class="text-end heart">🤍</p>
-        <img :src="movie.title.image.url" alt="..." />
+        <img class="img-fluid" :src="movie.title.image.url" alt="..." />
       </div>
-      <div class="col ms-4">
+      <div class="col-sm-12 col-md-6   p-3 p-md-5">
         <div class="d-flex align-items-center mb-3">
           <h3 class="me-1 fw-bold m-0">
             {{ movie.title.title }}
@@ -96,7 +96,7 @@ export default {
 
 <style scoped>
 img {
-  height: 500px;
+  max-height: 500px;
 }
 .raiting {
   font-size: 14px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-2 col-md-3 col-sm-4  pb-4">
+  <div class="col-sm-12 col-md-4 col-lg-3  pb-4">
     <div class="card">
       <img
         :src="movie.image && movie.image.url ? movie.image.url : imgNotFoundSrc"
@@ -33,6 +33,7 @@ export default {
       // trimitetitlu(){
       //   this.$emit("trimitetitlu", this.movie.title);
       //     console.log('message emit from child component')
+      // bum
       // }
     }
 };
