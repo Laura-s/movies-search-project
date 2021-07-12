@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row justify-content-center py-5" id="search-row">
-      <div class="col-5">
+      <div class="col-10 col-md-5">
         <div class="input-group">
           <input
             type="text"
